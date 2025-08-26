@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METRO SHOP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #eee;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #333;
+            margin: 15px 0;
+        }
+        
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff3300;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            margin: 25px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #ff6600;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .link-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #ff3300;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 25px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .social-links a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ASUNA</h1>
+            <div class="subtitle">CAMBIÙ ДЕШЁВЫЕ ВЕЩИ! ТУТ</div>
+        </header>
+        
+        <div class="main-title">✕ METRO SHOP ✕</div>
+        
+        <div class="section">
+            <h2 class="section-title">✔ ЛС МЕНЕДЖЕРА ✔</h2>
+            <p>Свяжитесь с нашим менеджером для консультации или оформления заказа:</p>
+            <input type="text" class="link-input" placeholder="Вставьте ссылку на менеджера">
+            <button class="btn">Сохранить ссылку</button>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="section">
+            <h2 class="section-title">ВОПРОС ИЛИ ЕЩЁ ЧТО-ТО</h2>
+            <p>Здесь вы можете задать вопрос или получить дополнительную информацию:</p>
+            <input type="text" class="link-input" placeholder="Вставьте ссылку для вопросов">
+            <button class="btn">Сохранить ссылку</button>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">YOUTUBE</h2>
+            <p>Подпишитесь на наш YouTube-канал:</p>
+            <input type="text" class="link-input" placeholder="Вставьте ссылку на YouTube-канал">
+            <button class="btn">Сохранить ссылку</button>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">HOME KAPTbl</h2>
+            <p>Основные категории товаров:</p>
+            <input type="text" class="link-input" placeholder="Вставьте ссылку на категории">
+            <button class="btn">Сохранить ссылку</button>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Создать сайт бесплатно</h2>
+            <p>Ресурсы для создания сайта:</p>
+            <input type="text" class="link-input" placeholder="Вставьте ссылку на конструктор сайтов">
+            <button class="btn">Сохранить ссылку</button>
+        </div>
+        
+        <div class="social-links">
+            <a href="#">Telegram</a>
+            <a href="#">VKontakte</a>
+            <a href="#">Instagram</a>
+        </div>
+        
+        <footer>
+            <p>5355084523868945</p>
+            <p>© 2023 METRO SHOP. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Простой скрипт для демонстрации работы кнопок
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                if (input.value.trim() !== '') {
+                    alert('Ссылка сохранена: ' + input.value);
+                } else {
+                    alert('Пожалуйста, введите ссылку');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

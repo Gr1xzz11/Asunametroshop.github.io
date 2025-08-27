@@ -4,201 +4,372 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>METRO SHOP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f0f0f0;
+            background-color: #e8e8e8;
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
         
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 20px;
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
         }
         
-        header {
+        .header-with-avatar {
+            background: linear-gradient(135deg, #2c2c2c 0%, #7a7a7a 100%);
+            padding: 30px 20px 20px;
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #eee;
+            color: white;
+            position: relative;
+        }
+        
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(45deg, #ff7e00, #ff3300);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         h1 {
-            font-size: 28px;
-            color: #ff6600;
+            font-size: 36px;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #fff;
         }
         
-        h2 {
-            font-size: 22px;
-            color: #333;
-            margin: 15px 0;
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            color: #f0f0f0;
         }
         
         .main-title {
             font-size: 32px;
             font-weight: bold;
+            text-align: center;
+            margin: 25px 0;
             color: #ff3300;
             text-transform: uppercase;
-            margin: 20px 0;
-        }
-        
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
         
         .section {
-            margin: 25px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
         .section-title {
-            font-size: 20px;
+            font-size: 22px;
             color: #ff6600;
             margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 8px;
         }
         
-        .link-input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .section-title i {
+            margin-right: 10px;
         }
         
         .btn {
-            background-color: #ff6600;
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #ff6600 0%, #ff3300 100%);
             color: white;
-            padding: 10px 15px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
         }
         
         .btn:hover {
-            background-color: #ff3300;
+            background: linear-gradient(90deg, #ff3300 0%, #cc2200 100%);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(255, 51, 0, 0.4);
         }
         
-        .divider {
-            height: 1px;
-            background-color: #ddd;
-            margin: 25px 0;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 15px;
-            border-top: 1px solid #ddd;
-            color: #666;
-            font-size: 14px;
+        .btn i {
+            margin-left: 8px;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 20px;
+            margin: 30px 0;
         }
         
         .social-links a {
-            color: #ff6600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #7a7a7a 100%);
+            color: white;
+            border-radius: 50%;
             text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
-            text-decoration: underline;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        .card-number {
+            font-family: monospace;
+            font-size: 22px;
+            letter-spacing: 3px;
+            margin: 15px 0;
+            color: #ff3300;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border: 2px dashed #ff6600;
+        }
+        
+        .avatar-input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .hidden-pixel {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0.01;
+            pointer-events: none;
+        }
+        
+        .password-section {
+            display: none;
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #ff3333;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+            
+            .section {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .btn {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            .avatar-container {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header-with-avatar">
+            <div class="avatar-container" id="avatar-display">
+                <i class="fas fa-user"></i>
+            </div>
+            
+            <!-- Скрытый пиксель с ссылкой на аватарку -->
+            <img src="https://example.com/default-avatar.jpg" id="hidden-avatar" class="hidden-pixel" crossorigin="anonymous">
+            
             <h1>ASUNA</h1>
-            <div class="subtitle">CAMBIÙ ДЕШЁВЫЕ ВЕЩИ! ТУТ</div>
-        </header>
+            <div class="subtitle">САМЫЙ ДЕШЕВЫЙ ЛУТ В МЕТРОШОПЕ У АСУНЫ</div>
+        </div>
         
         <div class="main-title">✕ METRO SHOP ✕</div>
         
         <div class="section">
-            <h2 class="section-title">✔ ЛС МЕНЕДЖЕРА ✔</h2>
-            <p>Свяжитесь с нашим менеджером для консультации или оформления заказа:</p>
-            <input type="text" class="link-input" placeholder="Вставьте ссылку на менеджера">
-            <button class="btn">Сохранить ссылку</button>
+            <h2 class="section-title"><i class="fas fa-store"></i> METRO SHOP</h2>
+            <p>Самые дешевые цены, быстрая выдача</p>
+            
+            <a href="https://t.me/Asunametroshop01" class="btn">
+                Перейти в магазин <i class="fas fa-shopping-cart"></i>
+            </a>
         </div>
         
-        <div class="divider"></div>
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-headset"></i> ЛС МЕНЕДЖЕРА</h2>
+            <p>Связь с менеджером для покупки или по поводу вступления в клан</p>
+            
+            <a href="https://t.me/Gr1xzz1" class="btn">
+                Написать менеджеру <i class="fab fa-telegram"></i>
+            </a>
+        </div>
         
         <div class="section">
-            <h2 class="section-title">ВОПРОС ИЛИ ЕЩЁ ЧТО-ТО</h2>
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> ВОПРОС ИЛИ ЕЩЁ ЧТО-ТО</h2>
             <p>Здесь вы можете задать вопрос или получить дополнительную информацию:</p>
-            <input type="text" class="link-input" placeholder="Вставьте ссылку для вопросов">
-            <button class="btn">Сохранить ссылку</button>
+            
+            <a href="https://t.me/Asuna1_0_1" class="btn">
+                Задать вопрос <i class="fas fa-comments"></i>
+            </a>
         </div>
         
         <div class="section">
-            <h2 class="section-title">YOUTUBE</h2>
+            <h2 class="section-title"><i class="fab fa-youtube"></i> YOUTUBE</h2>
             <p>Подпишитесь на наш YouTube-канал:</p>
-            <input type="text" class="link-input" placeholder="Вставьте ссылку на YouTube-канал">
-            <button class="btn">Сохранить ссылку</button>
+            
+            <a href="https://www.youtube.com/@ASUNA_METRO_SHOP" class="btn">
+                Наш YouTube канал <i class="fab fa-youtube"></i>
+            </a>
         </div>
         
         <div class="section">
-            <h2 class="section-title">HOME KAPTbl</h2>
-            <p>Основные категории товаров:</p>
-            <input type="text" class="link-input" placeholder="Вставьте ссылку на категории">
-            <button class="btn">Сохранить ссылку</button>
+            <h2 class="section-title"><i class="fas fa-credit-card"></i> НОМЕР КАРТЫ</h2>
+            <div class="card-number">5355084523868945</div>
         </div>
         
-        <div class="section">
-            <h2 class="section-title">Создать сайт бесплатно</h2>
-            <p>Ресурсы для создания сайта:</p>
-            <input type="text" class="link-input" placeholder="Вставьте ссылку на конструктор сайтов">
-            <button class="btn">Сохранить ссылку</button>
-        </div>
         
-        <div class="social-links">
-            <a href="#">Telegram</a>
-            <a href="#">VKontakte</a>
-            <a href="#">Instagram</a>
-        </div>
         
         <footer>
-            <p>5355084523868945</p>
-            <p>© 2023 METRO SHOP. Все права защищены.</p>
+            <p>© 2025 METRO SHOP. Все права защищены. Сайт создан менеджером.</p>
         </footer>
     </div>
 
     <script>
-        // Простой скрипт для демонстрации работы кнопок
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const input = this.previousElementSibling;
-                if (input.value.trim() !== '') {
-                    alert('Ссылка сохранена: ' + input.value);
-                } else {
-                    alert('Пожалуйста, введите ссылку');
+        // Пароль для изменения аватарки
+        const AVATAR_PASSWORD = "1283256";
+        
+        // Функция для установки аватарки по ссылке
+        function setAvatar(avatarUrl) {
+            if (!avatarUrl) return;
+            
+            const avatarDisplay = document.getElementById('avatar-display');
+            const hiddenAvatar = document.getElementById('hidden-avatar');
+            
+            // Устанавливаем ссылку в скрытый пиксель
+            hiddenAvatar.src = avatarUrl;
+            
+            // Показываем аватарку
+            avatarDisplay.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = avatarUrl;
+            img.onerror = function() {
+                avatarDisplay.innerHTML = '<i class="fas fa-user"></i>';
+                alert('Ошибка загрузки аватарки. Проверьте ссылку.');
+            };
+            avatarDisplay.appendChild(img);
+            
+            // Сохраняем в localStorage
+            localStorage.setItem('metroshop_avatar', avatarUrl);
+        }
+        
+        // Функция для запроса пароля и изменения аватарки
+        function changeAvatarWithPassword() {
+            const password = prompt('Введите пароль для изменения аватарки:');
+            if (password === AVATAR_PASSWORD) {
+                const avatarUrl = prompt('Введите новую ссылку на аватарку:');
+                if (avatarUrl) {
+                    setAvatar(avatarUrl);
+                    alert('Аватарка успешно изменена!');
                 }
+            } else if (password !== null) {
+                alert('Неверный пароль!');
+            }
+        }
+        
+        // Загрузка сохраненной аватарки при загрузке страницы
+        window.addEventListener('load', function() {
+            const savedAvatar = localStorage.getItem('metroshop_avatar');
+            if (savedAvatar) {
+                setAvatar(savedAvatar);
+            }
+            
+            // Добавляем скрытую функциональность для изменения аватарки
+            // Двойной клик на аватарку запрашивает пароль
+            document.getElementById('avatar-display').addEventListener('dblclick', function(e) {
+                e.preventDefault();
+                changeAvatarWithPassword();
+            });
+            
+            // Тройной клик на заголовок сайта тоже запрашивает пароль
+            let clickCount = 0;
+            document.querySelector('h1').addEventListener('click', function() {
+                clickCount++;
+                if (clickCount >= 3) {
+                    changeAvatarWithPassword();
+                    clickCount = 0;
+                }
+                
+                // Сбрасываем счетчик через 1 секунду
+                setTimeout(() => { clickCount = 0; }, 1000);
             });
         });
     </script>
